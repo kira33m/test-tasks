@@ -2,7 +2,6 @@ package library;
 
 import java.util.*;
 
-// Класс Книга
 class Book {
     private int id;
     private String title;
@@ -23,12 +22,12 @@ class Book {
     }
 }
 
-// Класс "Библиотека"
+
 class Library {
     private Map<Integer, Book> books = new HashMap<>();
     private int nextId = 1; // автоинкремент ID
 
-    // Добавить книгу
+
     public Book addBook(String title, String author) {
         Book b = new Book(nextId, title, author);
         books.put(nextId, b);
@@ -36,17 +35,17 @@ class Library {
         return b;
     }
 
-    // Получить все книги
+
     public List<Book> getAllBooks() {
         return new ArrayList<>(books.values());
     }
 
-    // Найти книгу по id
+
     public Book getBookById(int id) {
         return books.get(id);
     }
 
-    // Удалить книгу
+
     public boolean deleteBook(int id) {
         return books.remove(id) != null;
     }
